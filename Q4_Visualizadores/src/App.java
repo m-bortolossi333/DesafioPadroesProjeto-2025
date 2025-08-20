@@ -5,6 +5,7 @@ public class App {
         var dados = new FonteDeDados();
         var cm = new VisualizadorDeMedia(dados.getValores());
         var cs = new VisualizadorDeSomatorio(dados.getValores());
+        var cmult = new VisualizadorDeMutiplicacao(dados.getValores());
 
         Scanner s = new Scanner(System.in);
         int valor = 0;
@@ -17,8 +18,10 @@ public class App {
             dados.add(valor);
             cs.acrescentaValor(valor);
             cm.acrescentaValor(valor);
+            cmult.acrescentaValor(valor);
             cs.exibeSomatorio();
             cm.exibeMedia();
+            cmult.exibeMultiplicacao();
         }
         System.out.println("Fim");
     }
