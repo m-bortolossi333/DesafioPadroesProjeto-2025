@@ -8,5 +8,13 @@ public class App {
         }else{
             System.out.println(email+" não é um email válido!");
         }
+    
+        String matricula = "12345";
+        if (validador.valida(Validador.Tipo.MATRICULA, matricula)) {
+            System.out.println(matricula + " é uma matrícula válida!");
+        } else {
+            System.out.println(matricula + " não é uma matrícula válida!");
+        }
+    
     }
 }
