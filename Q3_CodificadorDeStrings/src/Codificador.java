@@ -2,7 +2,23 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class Codificador{
-    public enum Tipo {SIMPLES,DESLOCA};
+    private CodificadorInterface codificador;
+
+    public void setCodificador(CodificadorInterface codificador){
+        this.codificador = codificador;
+    }
+
+    public void codificar(){
+        codificador.codifica();
+    }
+
+    public void desCodifica(){
+        codificador.desCodifica();
+    }
+
+
+    
+    /*public enum Tipo {SIMPLES,DESLOCA};
     private Map<Character,Character> tabCod;
     private Map<Character,Character> tabDeCod;
 
@@ -87,5 +103,5 @@ public class Codificador{
                 return str;
         }
     }
-
+*/
 }
