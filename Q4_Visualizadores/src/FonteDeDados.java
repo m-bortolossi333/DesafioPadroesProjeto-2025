@@ -4,14 +4,33 @@ import java.util.List;
 
 public class FonteDeDados{
     private List<Integer> lst;
+    private List<iVisualizador> ivisualizador;
 
     public FonteDeDados(){
         lst = new LinkedList<>();
+        iVisualizador = new ArrayList<>();
+    }
+
+    public void adicionaIVisualizador(iVisualizador ivs){
+        if (!ivisualizador.contains(ivs)) {
+            ivisualizador.add(ivs);
+        }
+    }
+
+    public void removeIVisualizador(iVisualizador ivs){
+        ivisualizador.remove(ivs);
+    }
+
+    public void notificar(){
+        for(iVisualizador ivs :ivisualizador){
+            ivs.atualizar(this);
+        }
     }
 
     public void add(Integer value){
         if (value < 0) throw new IllegalArgumentException("Valor invalido");
         lst.add(value);
+        notificar();
     }
 
     public int quantidade(){
