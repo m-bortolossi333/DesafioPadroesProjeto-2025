@@ -2,10 +2,10 @@ import java.util.Scanner;
 
 public class App {
     public static void main(String[] args) throws Exception {
-        var dados = new FonteDeDados();
-        var cm = new VisualizadorDeMedia(dados.getValores());
-        var cs = new VisualizadorDeSomatorio(dados.getValores());
-        var cmult = new VisualizadorDeMutiplicacao(dados.getValores());
+        FonteDeDados dados = new FonteDeDados();
+        iVisualizador cm = new VisualizadorDeMedia();
+        iVisualizador cs = new VisualizadorDeSomatorio();
+        iVisualizador cmult = new VisualizadorDeMutiplicacao();
 
         Scanner s = new Scanner(System.in);
         int valor = 0;
@@ -16,12 +16,10 @@ public class App {
                 break;
             }
             dados.add(valor);
-            cs.acrescentaValor(valor);
-            cm.acrescentaValor(valor);
-            cmult.acrescentaValor(valor);
-            cs.exibeSomatorio();
-            cm.exibeMedia();
-            cmult.atualizar(dados);
+            dados.adicionaIVisualizador(cs);
+            dados.adicionaIVisualizador(cmult);
+            dados.adicionaIVisualizador(cm);
+            
         }
         System.out.println("Fim");
     }
