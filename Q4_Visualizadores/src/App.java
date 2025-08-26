@@ -21,7 +21,7 @@ public class App {
             cmult.acrescentaValor(valor);
             cs.exibeSomatorio();
             cm.exibeMedia();
-            cmult.exibeMultiplicacao();
+            cmult.atualizar(dados);
         }
         System.out.println("Fim");
     }

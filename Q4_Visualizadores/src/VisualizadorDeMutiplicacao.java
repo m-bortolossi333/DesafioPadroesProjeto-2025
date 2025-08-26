@@ -1,21 +1,13 @@
 import java.util.List;
 
-public class VisualizadorDeMutiplicacao {
-    private List<Integer> valores;
+public class VisualizadorDeMutiplicacao implements iVisualizador{
     
-    public VisualizadorDeMutiplicacao(List<Integer> valores){
-        this.valores = valores;
-    }
-
-    public void defineValores(List<Integer> valores){
-        this.valores = valores;
-    }
-
-    public void acrescentaValor(Integer valor){
-        this.valores.add(valor);
-    }
-
-    public void exibeMultiplicacao(){
-        System.out.println("");
+    @Override
+    public void atualizar(FonteDeDados fonteDeDados){
+        List<Integer> valores = fonteDeDados.getValores();
+        long produto = valores.stream()
+            .mapToLong(Integer::longValue)
+            .reduce(1, (a, b) -> a*b);
+        System.out.println("Multiplicação: "+produto+", quantidade de elemento: "+valores.size());
     }
 }

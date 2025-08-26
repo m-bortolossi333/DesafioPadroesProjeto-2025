@@ -7,8 +7,8 @@ public class FonteDeDados{
     private List<iVisualizador> ivisualizador;
 
     public FonteDeDados(){
-        lst = new LinkedList<>();
-        iVisualizador = new ArrayList<>();
+        this.lst = new LinkedList<>();
+        this.ivisualizador = new ArrayList<>();
     }
 
     public void adicionaIVisualizador(iVisualizador ivs){
